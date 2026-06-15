@@ -233,6 +233,11 @@ nav.scrolled {
   padding: 1.3rem 5rem;
   display: flex; align-items: center; justify-content: center; gap: 5rem;
   flex-wrap: wrap;
+  overflow: hidden;
+}
+.trust-track {
+  display: flex; align-items: center; justify-content: center; gap: 5rem;
+  flex-wrap: wrap;
 }
 .trust-item {
   color: var(--blush);
@@ -656,6 +661,18 @@ footer {
   .about-stats { flex-wrap: wrap; gap: 1.5rem; }
   .res-form { flex-direction: column; }
   .res-form input, .res-form select { min-width: unset; width: 100%; }
+  .trust-strip { justify-content: flex-start; flex-wrap: nowrap; padding: 1.1rem 0; }
+  .trust-track {
+    flex-wrap: nowrap;
+    gap: 3rem;
+    flex-shrink: 0;
+    animation: trustScroll 22s linear infinite;
+    padding-right: 3rem;
+  }
+  @keyframes trustScroll {
+    from { transform: translateX(0); }
+    to { transform: translateX(-100%); }
+  }
 }
 </style>
 </head>
@@ -694,7 +711,7 @@ footer {
   </div>
   <div class="hero-right">
     <div class="hero-img-wrap">
-      <img src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?w=1200&q=90" alt="Coffee and cake">
+      <img src="https://img.magnific.com/free-photo/red-velvet-cake-slices-with-chocolate-chips-inside-brown-plate_114579-3320.jpg" alt="Coffee and cake">
       <div class="hero-overlay"></div>
     </div>
     <div class="hero-float-card">
@@ -711,11 +728,20 @@ footer {
 
 <!-- TRUST STRIP -->
 <div class="trust-strip">
-  <div class="trust-item"><span class="trust-dot"></span>Baked Fresh Daily</div>
-  <div class="trust-item"><span class="trust-dot"></span>Single-Origin Coffee</div>
-  <div class="trust-item"><span class="trust-dot"></span>Homemade Recipes</div>
-  <div class="trust-item"><span class="trust-dot"></span>Free Wi-Fi</div>
-  <div class="trust-item"><span class="trust-dot"></span>Cozy Corner Seating</div>
+  <div class="trust-track">
+    <div class="trust-item"><span class="trust-dot"></span>Baked Fresh Daily</div>
+    <div class="trust-item"><span class="trust-dot"></span>Single-Origin Coffee</div>
+    <div class="trust-item"><span class="trust-dot"></span>Homemade Recipes</div>
+    <div class="trust-item"><span class="trust-dot"></span>Free Wi-Fi</div>
+    <div class="trust-item"><span class="trust-dot"></span>Cozy Corner Seating</div>
+  </div>
+  <div class="trust-track" aria-hidden="true">
+    <div class="trust-item"><span class="trust-dot"></span>Baked Fresh Daily</div>
+    <div class="trust-item"><span class="trust-dot"></span>Single-Origin Coffee</div>
+    <div class="trust-item"><span class="trust-dot"></span>Homemade Recipes</div>
+    <div class="trust-item"><span class="trust-dot"></span>Free Wi-Fi</div>
+    <div class="trust-item"><span class="trust-dot"></span>Cozy Corner Seating</div>
+  </div>
 </div>
 
 <!-- ABOUT -->
